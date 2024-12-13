@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">SchreckNet</string>
+    <string name="dice_roller_main_menu">Dice Roller</string>
+    <string name="sheet_manager_main_menu">Sheet Manager</string>
+    <string name="title_menu">SchreckNet 1.0</string>
+    <string name="number_dice_select">How many dices do you want to throw?</string>
+    <string name="hunger_dice_select">…and how many of those are hunger dices?</string>
+    <string name="throw_dices_instruction"> Shake your device to throw your dices.</string>
 </resources>
