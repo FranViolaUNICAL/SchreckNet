@@ -11,7 +11,10 @@ import android.text.TextWatcher
 import android.util.Log
 import android.view.KeyEvent
 import android.view.View
+import android.widget.AdapterView
+import android.widget.ArrayAdapter
 import android.widget.EditText
+import android.widget.Spinner
 import android.widget.TextView
 import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
@@ -35,6 +38,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.sp
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.core.view.isVisible
 import kotlinx.coroutines.delay
 import java.text.StringCharacterIterator
 import java.util.Timer
@@ -45,6 +49,8 @@ class DiceRollerActivity : AppCompatActivity(), SensorEventListener {
     lateinit var sensorManager: SensorManager
     lateinit var accelerometer: Sensor
     var dice_result_shown: Boolean = true
+    var dice_number = 0
+    var hunger_number = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -55,66 +61,44 @@ class DiceRollerActivity : AppCompatActivity(), SensorEventListener {
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-        val diceNumber = findViewById<EditText>(R.id.dice_number)
-        val hungerNumber = findViewById<EditText>(R.id.hunger_number)
-        val hungerText = findViewById<TextView>(R.id.hunger_text)
+
+        val diceNumber = findViewById<Spinner>(R.id.dice_number)
+        val diceNumber_items = resources.getStringArray(R.array.dice_quantity)
+        val diceNumber_adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, diceNumber_items)
+        diceNumber_adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+        diceNumber.adapter = diceNumber_adapter
+
+        val hungerNumber = findViewById<Spinner>(R.id.hunger_number)
+        val hungerNumber_items = resources.getStringArray(R.array.hunger_dice_quantity)
+        val hungerNumber_adapter = ArrayAdapter(this, android.R.layout.simple_spinner_item, hungerNumber_items)
+        hungerNumber_adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
+        hungerNumber.adapter = hungerNumber_adapter
+
         val instructionText = findViewById<TextView>(R.id.throw_dices_instructions_text)
-        diceNumber.addTextChangedListener(object : TextWatcher {
-            private var typingTimer: Timer? = null
-            private val typingDelay: Long = 500
-            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
-
+        diceNumber.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            override fun onItemSelected(parent: AdapterView<*>, view: View?, position: Int, id: Long) {
+                val selectedItem = parent.getItemAtPosition(position).toString().toInt()
+                dice_number = selectedItem
+                Log.d("variable_changed","dice number changed to: $dice_number")
             }
 
-            override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
-                typingTimer?.cancel()
+            override fun onNothingSelected(parent: AdapterView<*>) {
+            }
+        }
+
+        hungerNumber.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+            override fun onItemSelected(parent: AdapterView<*>, view: View?, position: Int, id: Long) {
+                val selectedItem = parent.getItemAtPosition(position).toString().toInt()
+                hunger_number = selectedItem
+                instructionText.isVisible = true
+                Log.d("variable_changed","hunger number changed to: $hunger_number")
             }
 
-            override fun afterTextChanged(p0: Editable?) {
-                if(diceNumber.text == null || diceNumber.text.toString() == ""){
-                    hungerNumber.visibility = View.INVISIBLE
-                    hungerText.visibility = View.INVISIBLE
-                }
-                else{
-                    typingTimer = Timer()
-                    typingTimer?.schedule(object : TimerTask() {
-                        override fun run() {
-                            runOnUiThread {
-                                hungerNumber.visibility = View.VISIBLE
-                                hungerText.visibility = View.VISIBLE
-                            }
-                        }
-                    }, typingDelay)
-                }
+            override fun onNothingSelected(parent: AdapterView<*>) {
+                instructionText.isVisible = false
             }
-        })
-        hungerNumber.addTextChangedListener(object : TextWatcher {
-            private var typingTimer: Timer? = null
-            private val typingDelay: Long = 200
-            override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
-            }
+        }
 
-            override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
-                typingTimer?.cancel()
-            }
-
-            override fun afterTextChanged(p0: Editable?) {
-                if(hungerNumber.getText() == null || hungerNumber.getText().toString() == ""){
-                    Toast.makeText(hungerNumber.context, "Select your hunger dices. 0 if you have no hunger", Toast.LENGTH_SHORT).show()
-                }
-                else{
-                    typingTimer = Timer()
-                    typingTimer?.schedule(object : TimerTask() {
-                        override fun run() {
-                            runOnUiThread() {
-                                instructionText.visibility = View.VISIBLE
-                                dice_result_shown = false
-                            }
-                        }
-                    }, typingDelay)
-                }
-            }
-        })
         sensorManager = getSystemService(SENSOR_SERVICE) as SensorManager
         accelerometer = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER)!!
     }
@@ -130,7 +114,7 @@ class DiceRollerActivity : AppCompatActivity(), SensorEventListener {
             val acceleration = sqrt((x * x + y * y + z * z).toDouble())
             Log.d("Accelerometer_values_detected","x:$x, y:$y, z:$z, a:$acceleration")
             val currentTime = System.currentTimeMillis()
-            if(acceleration > 50) {
+            if(acceleration > 25) {
                 if(currentTime - lastShakeTime > 1000 && dice_result_shown == false){
                     Log.d("Shake_detected","detected shake with accelleration $acceleration")
                     lastShakeTime = currentTime
@@ -142,8 +126,6 @@ class DiceRollerActivity : AppCompatActivity(), SensorEventListener {
 
 
     private fun onShakeDetected(){
-        val hunger_number = findViewById<EditText>(R.id.hunger_number).text.toString().toInt()
-        val dice_number = findViewById<EditText>(R.id.dice_number).text.toString().toInt()
         val results: String = processResultString(dice_number, hunger_number)
         val cp_results = findViewById<androidx.compose.ui.platform.ComposeView>(R.id.cp_dice_results)
         if(dice_number in hunger_number..16) {
@@ -265,13 +247,5 @@ class DiceRollerActivity : AppCompatActivity(), SensorEventListener {
             modifier = Modifier.focusable(false),
             textAlign= TextAlign.Start
         )
-    }
-
-    override fun onKeyDown(keyCode: Int, event: KeyEvent?): Boolean {
-        if (keyCode == KeyEvent.KEYCODE_ENTER){
-            Log.d("enter_pressed","ENTER KEY WAS PRESSED")
-            return true
-        }
-        return super.onKeyDown(keyCode, event)
     }
 }

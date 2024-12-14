@@ -6,4 +6,32 @@
     <string name="number_dice_select">How many dices do you want to throw?</string>
     <string name="hunger_dice_select">…and how many of those are hunger dices?</string>
     <string name="throw_dices_instruction"> Shake your device to throw your dices.</string>
+    <string-array name="dice_quantity">
+        <item> 1 </item>
+        <item> 2 </item>
+        <item> 3 </item>
+        <item> 4 </item>
+        <item> 5 </item>
+        <item> 6 </item>
+        <item> 7 </item>
+        <item> 8 </item>
+        <item> 9 </item>
+        <item> 10 </item>
+        <item> 11 </item>
+        <item> 12 </item>
+        <item> 13 </item>
+        <item> 14 </item>
+        <item> 15 </item>
+        <item> 16 </item>
+    </string-array>
+    <string-array name="hunger_dice_quantity">
+        <item> 1 </item>
+        <item> 2 </item>
+        <item> 3 </item>
+        <item> 4 </item>
+        <item> 5 </item>
+    </string-array>
+
+    <string name="storyteller_mode"> Storyteller Mode </string>
+    <string name="player_mode"> Player Mode </string>
 </resources>

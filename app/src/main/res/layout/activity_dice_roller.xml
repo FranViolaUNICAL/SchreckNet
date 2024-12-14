@@ -29,13 +29,10 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <EditText
+        <Spinner
             android:id="@+id/dice_number"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:ems="10"
-            android:fontFamily="@font/terminal"
-            android:inputType="number"
             android:textAlignment="center"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -66,7 +63,6 @@
             android:fontFamily="@font/terminal"
             android:gravity="center"
             android:text="@string/hunger_dice_select"
-            android:visibility="invisible"
             android:focusable="false"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -75,15 +71,11 @@
             app:layout_constraintTop_toBottomOf="@+id/dice_number"
             app:layout_constraintVertical_bias="0.123" />
 
-        <EditText
+        <Spinner
             android:id="@+id/hunger_number"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:ems="10"
-            android:fontFamily="@font/terminal"
             android:gravity="center"
-            android:inputType="number"
-            android:visibility="invisible"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
