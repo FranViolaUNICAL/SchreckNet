@@ -1,4 +1,4 @@
-package com.example.schrecknet
+package com.example.schrecknet.activities
 
 import android.content.Intent
 import android.icu.text.BreakIterator
@@ -20,6 +20,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.sp
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.example.schrecknet.R
 import kotlinx.coroutines.delay
 import java.text.StringCharacterIterator
 
@@ -40,7 +41,7 @@ class MainActivity : AppCompatActivity() {
         }
         val sheet_manager = findViewById<Button>(R.id.sheet_manager)
         sheet_manager.setOnClickListener{
-            val intent = Intent(this, SheetManagerActivity::class.java)
+            val intent = Intent(this, CharacterSelectionActivity::class.java)
             startActivity(intent)
         }
 
@@ -82,7 +83,7 @@ class MainActivity : AppCompatActivity() {
         }
         Text(
             text=substringText,
-            color= colorResource(id = R.color.terminal_green),
+            color= colorResource(R.color.terminal_white),
             fontFamily = FontFamily(Font(R.font.terminal)),
             fontSize= 55.sp,
             textAlign= TextAlign.Center

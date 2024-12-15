@@ -1,4 +1,4 @@
-package com.example.schrecknet
+package com.example.schrecknet.activities
 
 import android.hardware.Sensor
 import android.hardware.SensorEvent
@@ -6,14 +6,10 @@ import android.hardware.SensorEventListener
 import android.hardware.SensorManager
 import android.icu.text.BreakIterator
 import android.os.Bundle
-import android.text.Editable
-import android.text.TextWatcher
 import android.util.Log
-import android.view.KeyEvent
 import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
-import android.widget.EditText
 import android.widget.Spinner
 import android.widget.TextView
 import android.widget.Toast
@@ -39,10 +35,9 @@ import androidx.compose.ui.unit.sp
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.isVisible
+import com.example.schrecknet.R
 import kotlinx.coroutines.delay
 import java.text.StringCharacterIterator
-import java.util.Timer
-import java.util.TimerTask
 import kotlin.math.sqrt
 
 class DiceRollerActivity : AppCompatActivity(), SensorEventListener {
