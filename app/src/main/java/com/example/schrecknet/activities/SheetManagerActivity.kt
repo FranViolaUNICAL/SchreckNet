@@ -1,4 +1,4 @@
-package com.example.schrecknet
+package com.example.schrecknet.activities
 
 import android.content.Intent
 import android.os.Bundle
@@ -7,9 +7,8 @@ import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
-import com.example.schrecknet.activities.CharacterSelectionActivity
+import com.example.schrecknet.R
 
-//This activity will remain unimplemented until a difference between storyteller and player mode is implemented
 class SheetManagerActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -21,18 +20,22 @@ class SheetManagerActivity : AppCompatActivity() {
             insets
         }
 
-        val storyteller = findViewById<Button>(R.id.btn_storyteller_mode)
+        val charOfTheDay = findViewById<Button>(R.id.btn_character_of_the_day)
         val player = findViewById<Button>(R.id.btn_player_mode)
+        val newCharacter = findViewById<Button>(R.id.btn_new_character)
 
-        storyteller.setOnClickListener{
-            val intent = Intent(this, CharacterSelectionActivity::class.java)
-            intent.putExtra("mode","storyteller")
+        charOfTheDay.setOnClickListener{
+            val intent = Intent(this, CharacterSelectionActivity::class.java) //TO DO REPLACE WITH CHARACTER SHEET VIEWING ACTIVITY WITH EXTRAS SET TO CORRECT NAME
             startActivity(intent)
         }
 
         player.setOnClickListener{
             val intent = Intent(this, CharacterSelectionActivity::class.java)
-            intent.putExtra("mode", "player")
+            startActivity(intent)
+        }
+
+        newCharacter.setOnClickListener{
+            val intent = Intent(this, CharacterCreationActivity::class.java)
             startActivity(intent)
         }
     }

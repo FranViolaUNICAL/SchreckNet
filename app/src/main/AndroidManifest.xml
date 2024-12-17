@@ -33,7 +33,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".SheetManagerActivity"
+            android:name=".activities.SheetManagerActivity"
             android:exported="false"></activity>
     </application>
 

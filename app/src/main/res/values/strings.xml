@@ -31,8 +31,8 @@
         <item> 4 </item>
         <item> 5 </item>
     </string-array>
-    <string name="storyteller_mode"> Storyteller Mode </string>
-    <string name="player_mode"> Player Mode </string>
+    <string name="char_of_the_day"> Character Of The Day </string>
+    <string name="player_mode"> Select Your Character </string>
     <string name="sheet_manager_title"> Choose your mode: </string>
     <string name="create_new_character"> New Character </string>
 </resources>

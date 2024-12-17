@@ -43,7 +43,6 @@ import kotlin.math.sqrt
 class DiceRollerActivity : AppCompatActivity(), SensorEventListener {
     lateinit var sensorManager: SensorManager
     lateinit var accelerometer: Sensor
-    var dice_result_shown: Boolean = true
     var dice_number = 0
     var hunger_number = 0
 
@@ -69,31 +68,6 @@ class DiceRollerActivity : AppCompatActivity(), SensorEventListener {
         hungerNumber_adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
         hungerNumber.adapter = hungerNumber_adapter
 
-        val instructionText = findViewById<TextView>(R.id.throw_dices_instructions_text)
-        diceNumber.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
-            override fun onItemSelected(parent: AdapterView<*>, view: View?, position: Int, id: Long) {
-                val selectedItem = parent.getItemAtPosition(position).toString().toInt()
-                dice_number = selectedItem
-                Log.d("variable_changed","dice number changed to: $dice_number")
-            }
-
-            override fun onNothingSelected(parent: AdapterView<*>) {
-            }
-        }
-
-        hungerNumber.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
-            override fun onItemSelected(parent: AdapterView<*>, view: View?, position: Int, id: Long) {
-                val selectedItem = parent.getItemAtPosition(position).toString().toInt()
-                hunger_number = selectedItem
-                instructionText.isVisible = true
-                Log.d("variable_changed","hunger number changed to: $hunger_number")
-            }
-
-            override fun onNothingSelected(parent: AdapterView<*>) {
-                instructionText.isVisible = false
-            }
-        }
-
         sensorManager = getSystemService(SENSOR_SERVICE) as SensorManager
         accelerometer = sensorManager.getDefaultSensor(Sensor.TYPE_ACCELEROMETER)!!
     }
@@ -110,8 +84,8 @@ class DiceRollerActivity : AppCompatActivity(), SensorEventListener {
             Log.d("Accelerometer_values_detected","x:$x, y:$y, z:$z, a:$acceleration")
             val currentTime = System.currentTimeMillis()
             if(acceleration > 25) {
-                if(currentTime - lastShakeTime > 1000 && dice_result_shown == false){
-                    Log.d("Shake_detected","detected shake with accelleration $acceleration")
+                Log.d("Shake_detected","detected shake with accelleration $acceleration")
+                if(currentTime - lastShakeTime > 1000){
                     lastShakeTime = currentTime
                     onShakeDetected()
                 }
@@ -121,8 +95,13 @@ class DiceRollerActivity : AppCompatActivity(), SensorEventListener {
 
 
     private fun onShakeDetected(){
-        val results: String = processResultString(dice_number, hunger_number)
         val cp_results = findViewById<androidx.compose.ui.platform.ComposeView>(R.id.cp_dice_results)
+        val diceNumberSpinner = findViewById<Spinner>(R.id.dice_number)
+        dice_number = diceNumberSpinner.selectedItem.toString().toInt()
+        val hungerNumberSpinner = findViewById<Spinner>(R.id.hunger_number)
+        hunger_number = hungerNumberSpinner.selectedItem.toString().toInt()
+        val results: String = processResultString(dice_number, hunger_number)
+        Log.d("numbers_selected","dices: $dice_number, hunger dices: $hunger_number")
         if(dice_number in hunger_number..16) {
             cp_results.setContent {
                 AnimatedText(results)

@@ -5,7 +5,7 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".SheetManagerActivity">
+    tools:context=".activities.SheetManagerActivity">
 
     <com.example.schrecknet.MatrixRainView
         android:id="@+id/matrixRain"
@@ -31,7 +31,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <Button
-            android:id="@+id/btn_storyteller_mode"
+            android:id="@+id/btn_character_of_the_day"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="top"
@@ -39,14 +39,15 @@
             android:fontFamily="@font/terminal"
             android:gravity="center"
             android:padding="20dp"
-            android:text="@string/storyteller_mode"
+            android:text="@string/char_of_the_day"
             android:textSize="30sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/btn_player_mode"
-            app:layout_constraintVertical_bias="0.154"></Button>
+            app:layout_constraintVertical_bias="0.154">
+        </Button>
 
         <Button
             android:id="@+id/btn_player_mode"
@@ -64,7 +65,27 @@
             app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.419"></Button>
+            app:layout_constraintVertical_bias="0.419">
+        </Button>
+
+        <Button
+            android:id="@+id/btn_new_character"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top"
+            android:background="@drawable/bottone_personalizzato"
+            android:fontFamily="@font/terminal"
+            android:gravity="center"
+            android:padding="20dp"
+            android:text="@string/create_new_character"
+            android:textSize="30sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_character_of_the_day"
+            app:layout_constraintVertical_bias="0.409">
+        </Button>
 
         <TextView
             android:id="@+id/textView"
