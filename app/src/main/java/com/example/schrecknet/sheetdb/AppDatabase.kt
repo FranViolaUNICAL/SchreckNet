@@ -7,9 +7,6 @@ import androidx.room.RoomDatabase
 abstract class AppDatabase: RoomDatabase() {
     abstract fun characterSheetDao(): CharacterSheetDAO
     abstract fun disciplineDao(): DisciplinesDAO
-    abstract fun backgroundMeritFlawHavenDao(): BackgroundMeritFlawHavenDAO
-    abstract fun weaponDao(): WeaponsDAO
-    abstract fun slotsBarDao() : SlotsBarDAO
 
     companion object {
         @Volatile

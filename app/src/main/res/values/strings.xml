@@ -6,6 +6,7 @@
     <string name="number_dice_select">How many dices do you want to throw?</string>
     <string name="hunger_dice_select">…and how many of those are hunger dices?</string>
     <string name="throw_dices_instruction"> Shake your device to throw your dices.</string>
+    <string name="disciplines"> Disciplines </string>
     <string-array name="dice_quantity">
         <item> 1 </item>
         <item> 2 </item>
@@ -35,4 +36,151 @@
     <string name="player_mode"> Select Your Character </string>
     <string name="sheet_manager_title"> Choose your mode: </string>
     <string name="create_new_character"> New Character </string>
+    <string name="save_character"> Save Character</string>
+
+    <string-array name="PhysicalAttributes">
+        <item> Strength </item>
+        <item> Dexterity</item>
+        <item> Stamina</item>
+    </string-array>
+
+    <string-array name="SocialAttributes">
+        <item> Charisma </item>
+        <item> Manipulation</item>
+        <item> Composure</item>
+    </string-array>
+
+    <string-array name="MentalAttributes">
+        <item> Intelligence </item>
+        <item> Wits </item>
+        <item> Resolve </item>
+    </string-array>
+
+    <string-array name="CharacterDetails">
+        <item>Name</item>
+        <item>Concept</item>
+        <item>Chronicle</item>
+        <item>Ambition</item>
+        <item>Desire</item>
+        <item>Predator</item>
+        <item>Clan</item>
+        <item>Generation</item>
+        <item>Sire</item>
+    </string-array>
+
+    <string-array name="PhysicalSkills">
+        <item> Athletics </item>
+        <item> Brawl </item>
+        <item> Craft </item>
+        <item> Drive </item>
+        <item> Firearms </item>
+        <item> Larceny </item>
+        <item> Melee </item>
+        <item> Stealth </item>
+        <item> Survival </item>
+    </string-array>
+
+    <string-array name="SocialSkills">
+        <item> Animal Ken </item>
+        <item> Etiquette </item>
+        <item> Insight </item>
+        <item> Intimidation </item>
+        <item> Leadership </item>
+        <item> Performance </item>
+        <item> Persuasion </item>
+        <item> Streetwise </item>
+        <item> Subterfuge </item>
+    </string-array>
+
+    <string-array name="MentalSkills">
+        <item> Academics </item>
+        <item> Awareness </item>
+        <item> Finance </item>
+        <item> Investigation </item>
+        <item> Medicine </item>
+        <item> Occult </item>
+        <item> Politics </item>
+        <item> Science </item>
+        <item> Technology </item>
+    </string-array>
+
+    <string-array name="AttributesTitles">
+        <item> Physical Attributes </item>
+        <item> Social Attributes </item>
+        <item> Mental Attributes </item>
+    </string-array>
+
+    <string-array name="SkillsTitles">
+        <item> Physical Skills </item>
+        <item> Social Skills </item>
+        <item> Mental Skills </item>
+    </string-array>
+
+    <string-array name="TextSectionTitles">
+        <item>Chronicle Tenets</item>
+        <item>Touchstones &amp; Convictions</item>
+        <item>Clan Bane</item>
+    </string-array>
+
+    <string-array name="bloodPotency">
+        <item> 1 </item>
+        <item> 2 </item>
+        <item> 3 </item>
+        <item> 4 </item>
+        <item> 5 </item>
+        <item> 6 </item>
+        <item> 7 </item>
+        <item> 8 </item>
+        <item> 9 </item>
+        <item> 10 </item>
+    </string-array>
+
+    <string-array name="backgrounds">
+        <item> 1 </item>
+        <item> 2 </item>
+        <item> 3 </item>
+        <item> 4 </item>
+        <item> 5 </item>
+        <item> 6 </item>
+        <item> 7 </item>
+        <item> 8 </item>
+        <item> 9 </item>
+    </string-array>
+
+    <string-array name="backgroundsMerits">
+        <item> 1 </item>
+        <item> 2 </item>
+        <item> 3 </item>
+        <item> 4 </item>
+        <item> 5 </item>
+        <item> 6 </item>
+        <item> 7 </item>
+        <item> 8 </item>
+        <item> 9 </item>
+    </string-array>
+
+    <string name="blood"> Blood </string>
+    <string name="bloodPotency"> Blood Potency </string>
+    <string name="hunger"> Hunger </string>
+    <string name="humanity"> Humanity </string>
+
+    <string-array name="bloodSectionTitles">
+        <item>Blood Surge</item>
+        <item>Mend Amount</item>
+        <item>Power Bonus</item>
+        <item>Rouse Re Roll</item>
+        <item>Feeding Penalty</item>
+        <item>Bane Severity</item>
+    </string-array>
+
+    <string-array name="advantagesTitle">
+        <item>Backgrounds</item>
+        <item>Merits</item>
+        <item>Flaws</item>
+    </string-array>
+
+    <string name="haven">Haven</string>
+    <string name="weapons">Weapons</string>
+    <string name="advantages">Advantages</string>
+
 </resources>

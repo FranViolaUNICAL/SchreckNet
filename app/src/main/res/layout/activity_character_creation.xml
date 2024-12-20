@@ -5,7 +5,8 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activities.CharacterCreationActivity">
+    tools:context=".activities.CharacterSelectionActivity">
+
     <com.example.schrecknet.MatrixRainView
         android:id="@+id/matrixRain"
         android:layout_width="match_parent"
@@ -14,135 +15,59 @@
         tools:layout_editor_absoluteY="16dp">
     </com.example.schrecknet.MatrixRainView>
 
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/menu_frame"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/cornice_trasparente"
         android:padding="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0">
+        app:layout_constraintTop_toTopOf="parent">
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/terminal"
-            android:text="Name" />
 
-        <EditText
-            android:id="@+id/name_input"
-            android:layout_width="380dp"
-            android:layout_height="50dp"
+        <Button
+            android:id="@+id/btn_save_character"
+            android:layout_width="327dp"
+            android:layout_height="83dp"
+            android:layout_gravity="top"
+            android:background="@drawable/bottone_personalizzato"
             android:fontFamily="@font/terminal"
-            android:hint="Enter name" />
+            android:gravity="center"
+            android:padding="20dp"
+            android:text="@string/save_character"
+            android:textSize="34sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.511"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.954" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/terminal"
-            android:text="Chronicle" />
+        <ScrollView
+            android:layout_width="342dp"
+            android:layout_height="566dp"
+            android:padding="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0">
 
-        <EditText
-            android:id="@+id/chronicle_input"
-            android:layout_width="367dp"
-            android:layout_height="50dp"
-            android:fontFamily="@font/terminal"
-            android:hint="Enter chronicle" />
+            <LinearLayout
+                android:id="@+id/container"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="32dp" />
+        </ScrollView>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/terminal"
-            android:text="Concept" />
-
-        <EditText
-            android:id="@+id/concept_input"
-            android:layout_width="367dp"
-            android:layout_height="50dp"
-            android:fontFamily="@font/terminal"
-            android:hint="Enter concept" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/terminal"
-            android:text="Ambition" />
-
-        <EditText
-            android:id="@+id/ambition_input"
-            android:layout_width="367dp"
-            android:layout_height="50dp"
-            android:fontFamily="@font/terminal"
-            android:hint="Enter ambition" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/terminal"
-            android:text="Desire" />
-
-        <EditText
-            android:id="@+id/desire_input"
-            android:layout_width="367dp"
-            android:layout_height="50dp"
-            android:fontFamily="@font/terminal"
-            android:hint="Enter desire" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/terminal"
-            android:text="Predator" />
-
-        <EditText
-            android:id="@+id/predator_input"
-            android:layout_width="367dp"
-            android:layout_height="50dp"
-            android:fontFamily="@font/terminal"
-            android:hint="Enter predator" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/terminal"
-            android:text="Clan" />
-
-        <EditText
-            android:id="@+id/clan_input"
-            android:layout_width="367dp"
-            android:layout_height="50dp"
-            android:fontFamily="@font/terminal"
-            android:hint="Enter clan" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/terminal"
-            android:text="Generation" />
-
-        <EditText
-            android:id="@+id/generation_input"
-            android:layout_width="367dp"
-            android:layout_height="50dp"
-            android:fontFamily="@font/terminal"
-            android:hint="Enter generation"
-            android:inputType="number" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:fontFamily="@font/terminal"
-            android:text="Sire" />
-
-        <EditText
-            android:id="@+id/sire_input"
-            android:layout_width="367dp"
-            android:layout_height="50dp"
-            android:fontFamily="@font/terminal"
-            android:hint="Enter sire" />
-    </LinearLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

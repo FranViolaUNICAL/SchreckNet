@@ -14,6 +14,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.res.ResourcesCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.core.view.setPadding
 import com.example.schrecknet.R
 
 class CharacterSelectionActivity : AppCompatActivity() {
@@ -46,7 +47,7 @@ class CharacterSelectionActivity : AppCompatActivity() {
                 button.textSize = 20f
                 button.typeface = typeface
                 button.setOnClickListener {
-                    // Placeholder Toast
+                    // Placeholder Toast, REPLACE WITH CHARACTER SHEET VIEW ACTIVITY
                     Toast.makeText(this, "Hai selezionato: $characterName", Toast.LENGTH_SHORT).show()
                 }
                 button.setBackgroundResource(R.drawable.bottone_personalizzato)

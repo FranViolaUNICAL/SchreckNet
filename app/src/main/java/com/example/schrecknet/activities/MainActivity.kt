@@ -41,7 +41,7 @@ class MainActivity : AppCompatActivity() {
         }
         val sheet_manager = findViewById<Button>(R.id.sheet_manager)
         sheet_manager.setOnClickListener{
-            val intent = Intent(this, CharacterSelectionActivity::class.java)
+            val intent = Intent(this, SheetManagerActivity::class.java)
             startActivity(intent)
         }
 
