@@ -8,13 +8,13 @@ import androidx.room.Query
 import kotlinx.coroutines.flow.Flow
 
 @Dao
-interface DisciplinesDAO {
+interface CharacterAdvantageDAO {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertDiscipline(discipline: Discipline): Long
+    suspend fun insertCharacterAdvantage(characterAdvantage: CharacterAdvantage): Long
 
     @Query("SELECT * FROM Discipline WHERE characterName = :characterName")
-    suspend fun getDisciplinesForCharacter(characterName: String): Flow<List<Discipline>>
+    suspend fun getCharacterAdvantageForCharacter(characterName: String): Flow<List<CharacterAdvantage>>
 
     @Delete
-    suspend fun deleteDiscipline(discipline: Discipline)
+    suspend fun deleteCharacterAdvantage(characterAdvantage: CharacterAdvantage)
 }

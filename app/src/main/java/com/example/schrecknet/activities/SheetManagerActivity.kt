@@ -35,7 +35,7 @@ class SheetManagerActivity : AppCompatActivity() {
         }
 
         newCharacter.setOnClickListener{
-            val intent = Intent(this, CharacterCreationActivity::class.java)
+            val intent = Intent(this, CharacterCreationActivity2::class.java)
             startActivity(intent)
         }
     }

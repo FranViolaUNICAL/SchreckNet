@@ -57,7 +57,7 @@ class CharacterSelectionActivity : AppCompatActivity() {
         val btnCreateCharacter = findViewById<Button>(R.id.btn_create_new_character)
 
         btnCreateCharacter.setOnClickListener{
-            val intent = Intent(this, CharacterCreationActivity::class.java)
+            val intent = Intent(this, CharacterCreationActivity2::class.java)
             startActivity(intent)
         }
 

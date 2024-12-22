@@ -1,0 +1,31 @@
+package com.example.schrecknet.sheetdb
+
+data class CharacterSkills(
+    val athletics : Int,
+    val brawl : Int,
+    val craft : Int,
+    val drive : Int,
+    val firearms : Int,
+    val melee : Int,
+    val larceny : Int,
+    val stealth : Int,
+    val survival : Int,
+    val animalKen : Int,
+    val etiquette : Int,
+    val insight : Int,
+    val intimidation : Int,
+    val leadership : Int,
+    val performance : Int,
+    val persuasion : Int,
+    val streetwise : Int,
+    val subterfuge : Int,
+    val academics : Int,
+    val awareness : Int,
+    val finance : Int,
+    val investigation : Int,
+    val medicine : Int,
+    val occult : Int,
+    val politics : Int,
+    val science : Int,
+    val technology : Int
+)
