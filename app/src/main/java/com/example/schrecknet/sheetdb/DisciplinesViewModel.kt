@@ -6,6 +6,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 class DisciplinesViewModel(application: Application) : AndroidViewModel(application) {
@@ -20,7 +21,7 @@ class DisciplinesViewModel(application: Application) : AndroidViewModel(applicat
     }
 
     fun getDisciplinesForCharacter(characterName: String) {
-        viewModelScope.launch {
+        viewModelScope.launch(Dispatchers.IO) {
             dao.getDisciplinesForCharacter(characterName).collect { list ->
                 _disciplines.postValue(list)
             }
@@ -28,13 +29,13 @@ class DisciplinesViewModel(application: Application) : AndroidViewModel(applicat
     }
 
     fun insertDiscipline(discipline: Discipline) {
-        viewModelScope.launch {
+        viewModelScope.launch(Dispatchers.IO) {
             dao.insertDiscipline(discipline)
         }
     }
 
     fun deleteDiscipline(discipline: Discipline) {
-        viewModelScope.launch {
+        viewModelScope.launch(Dispatchers.IO) {
             dao.deleteDiscipline(discipline)
         }
     }

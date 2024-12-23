@@ -15,5 +15,5 @@ interface CharacterSheetDAO {
     suspend fun getCharacterSheetByName(name: String): CharacterSheet?
 
     @Delete
-    suspend fun deleteCharacterSheet(characterSheet: CharacterSheet?)
+    suspend fun deleteCharacterSheet(characterSheet: CharacterSheet)
 }

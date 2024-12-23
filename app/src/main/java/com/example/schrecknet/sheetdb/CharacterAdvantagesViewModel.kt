@@ -6,6 +6,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 
 class CharacterAdvantagesViewModel(application: Application) : AndroidViewModel(application) {
@@ -20,7 +21,7 @@ class CharacterAdvantagesViewModel(application: Application) : AndroidViewModel(
     }
 
     fun getAdvantageForCharacter(characterName: String) {
-        viewModelScope.launch {
+        viewModelScope.launch(Dispatchers.IO) {
             dao.getCharacterAdvantageForCharacter(characterName).collect { list ->
                 _characterAdvantages.postValue(list)
             }
@@ -28,13 +29,13 @@ class CharacterAdvantagesViewModel(application: Application) : AndroidViewModel(
     }
 
     fun insertAdvantage(characterAdvantage: CharacterAdvantage) {
-        viewModelScope.launch {
+        viewModelScope.launch(Dispatchers.IO) {
             dao.insertCharacterAdvantage(characterAdvantage)
         }
     }
 
     fun deleteAdvantage(characterAdvantage: CharacterAdvantage) {
-        viewModelScope.launch {
+        viewModelScope.launch(Dispatchers.IO) {
             dao.deleteCharacterAdvantage(characterAdvantage)
         }
     }

@@ -64,6 +64,6 @@ class CharacterSelectionActivity : AppCompatActivity() {
     }
 
     private fun getCharacterNames(): Set<String> {
-        return sharedPreferences.getStringSet("CharacterNamesList", mutableSetOf()) ?: mutableSetOf()
+        return sharedPreferences.getStringSet("CharacterNames", mutableSetOf()) ?: mutableSetOf()
     }
 }

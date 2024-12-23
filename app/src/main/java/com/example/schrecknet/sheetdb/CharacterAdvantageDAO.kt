@@ -10,10 +10,10 @@ import kotlinx.coroutines.flow.Flow
 @Dao
 interface CharacterAdvantageDAO {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertCharacterAdvantage(characterAdvantage: CharacterAdvantage): Long
+    fun insertCharacterAdvantage(characterAdvantage: CharacterAdvantage): Long
 
-    @Query("SELECT * FROM Discipline WHERE characterName = :characterName")
-    suspend fun getCharacterAdvantageForCharacter(characterName: String): Flow<List<CharacterAdvantage>>
+    @Query("SELECT * FROM CharacterAdvantage WHERE characterName = :characterName")
+    fun getCharacterAdvantageForCharacter(characterName: String): Flow<List<CharacterAdvantage>>
 
     @Delete
     suspend fun deleteCharacterAdvantage(characterAdvantage: CharacterAdvantage)

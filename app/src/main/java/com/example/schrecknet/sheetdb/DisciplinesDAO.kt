@@ -10,11 +10,11 @@ import kotlinx.coroutines.flow.Flow
 @Dao
 interface DisciplinesDAO {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertDiscipline(discipline: Discipline): Long
+    fun insertDiscipline(discipline: Discipline): Long
 
     @Query("SELECT * FROM Discipline WHERE characterName = :characterName")
-    suspend fun getDisciplinesForCharacter(characterName: String): Flow<List<Discipline>>
+    fun getDisciplinesForCharacter(characterName: String): Flow<List<Discipline>>
 
     @Delete
-    suspend fun deleteDiscipline(discipline: Discipline)
+    fun deleteDiscipline(discipline: Discipline)
 }

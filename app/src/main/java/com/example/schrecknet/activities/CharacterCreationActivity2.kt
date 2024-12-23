@@ -1,5 +1,6 @@
 package com.example.schrecknet.activities
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.content.SharedPreferences
 import android.content.SharedPreferences.Editor
@@ -12,10 +13,13 @@ import android.widget.LinearLayout
 import android.widget.Spinner
 import android.widget.TextView
 import android.widget.Toast
+import kotlinx.coroutines.launch
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.ViewPager2
@@ -32,6 +36,8 @@ import com.example.schrecknet.sheetdb.CharacterSkills
 import com.example.schrecknet.sheetdb.ChronicleTenetsTouchstonesAndConvictionsClanBane
 import com.example.schrecknet.sheetdb.Discipline
 import com.example.schrecknet.sheetdb.DisciplinesViewModel
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
 
 class CharacterCreationActivity2 : AppCompatActivity() {
     private lateinit var viewPager : ViewPager2
@@ -65,20 +71,9 @@ class CharacterCreationActivity2 : AppCompatActivity() {
             insets
         }
 
-        characterSheetViewModel = ViewModelProvider (
-            this,
-            ViewModelProvider.AndroidViewModelFactory.getInstance(application)
-        ).get(CharacterSheetViewModel::class.java)
-
-        disciplineViewModel = ViewModelProvider (
-            this,
-            ViewModelProvider.AndroidViewModelFactory.getInstance(application)
-        ).get(DisciplinesViewModel::class.java)
-
-        characterAdvantagesViewModel = ViewModelProvider (
-            this,
-            ViewModelProvider.AndroidViewModelFactory.getInstance(application)
-        ).get(CharacterAdvantagesViewModel::class.java)
+        characterSheetViewModel = ViewModelProvider(this, ViewModelProvider.AndroidViewModelFactory.getInstance(application)).get(CharacterSheetViewModel::class.java)
+        disciplineViewModel = ViewModelProvider(this, ViewModelProvider.AndroidViewModelFactory.getInstance(application)).get(DisciplinesViewModel::class.java)
+        characterAdvantagesViewModel = ViewModelProvider(this, ViewModelProvider.AndroidViewModelFactory.getInstance(application)).get(CharacterAdvantagesViewModel::class.java)
 
         sharedPreferences = getSharedPreferences("CharacterNames", Context.MODE_PRIVATE)
         editor = sharedPreferences.edit()
@@ -128,6 +123,7 @@ class CharacterCreationActivity2 : AppCompatActivity() {
         })
     }
 
+    @SuppressLint("SuspiciousIndentation")
     private fun saveInputData(viewPager : ViewPager2): Boolean {
         if(viewPager.currentItem == 0){
             val container = findViewById<LinearLayout>(R.id.character_details_container)
@@ -226,7 +222,7 @@ class CharacterCreationActivity2 : AppCompatActivity() {
             disciplines = mutableListOf()
                 for(i in 0 until ll.childCount){
                     Log.d("disciplines_debug","disciplines_container counts  ${ll.childCount} children")
-                val child = ll.getChildAt(i)
+                    val child = ll.getChildAt(i)
                     Log.d("disciplines_debug","disciplines_container child is type: ${child.javaClass}")
                 when(child){
                     is LinearLayout -> {
@@ -403,9 +399,11 @@ class CharacterCreationActivity2 : AppCompatActivity() {
         for(advantage in characterAdvantages){
             characterAdvantagesViewModel.insertAdvantage(advantage)
         }
-        val namesSet = sharedPreferences.getStringSet("CharacterNames", emptySet())!!.toMutableSet()
+        val namesSet = sharedPreferences.getStringSet("CharacterNames", mutableSetOf())!!.toMutableSet()
+        Log.d("character_saved","namesSet: $namesSet")
         namesSet.add(characterDetails.name)
         editor.putStringSet("CharacterNames",namesSet)
-        editor.apply()
+        editor.commit()
+        Log.d("character_saved","correctly saved character")
     }
 }

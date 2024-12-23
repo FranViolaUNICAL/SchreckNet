@@ -23,6 +23,7 @@ abstract class AppDatabase: RoomDatabase() {
                     AppDatabase::class.java,
                     "vampire_db"
                 ).build()
+                Log.d("AppDatabase", "Database creato con successo!")
                 INSTANCE = instance
                 instance
             }

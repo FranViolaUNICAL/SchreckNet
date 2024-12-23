@@ -16,7 +16,7 @@ import androidx.room.PrimaryKey
     ]
 )
 data class Discipline(
-    @PrimaryKey val characterName: String,
+    val characterName: String,
     val name: String,
     val level: Int,
     val power1: String,
