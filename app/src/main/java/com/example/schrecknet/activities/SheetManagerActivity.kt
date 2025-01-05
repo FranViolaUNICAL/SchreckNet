@@ -3,11 +3,14 @@ package com.example.schrecknet.activities
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import java.util.Calendar
 import com.example.schrecknet.R
+
 
 class SheetManagerActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -25,8 +28,19 @@ class SheetManagerActivity : AppCompatActivity() {
         val newCharacter = findViewById<Button>(R.id.btn_new_character)
 
         charOfTheDay.setOnClickListener{
-            val intent = Intent(this, CharacterSelectionActivity::class.java) //TO DO REPLACE WITH CHARACTER SHEET VIEWING ACTIVITY WITH EXTRAS SET TO CORRECT NAME
-            startActivity(intent)
+            val calendar: Calendar = Calendar.getInstance()
+            val dayOfWeek: Int = calendar.get(Calendar.DAY_OF_WEEK)
+            val days: Array<String> = arrayOf("Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday")
+            val dayName: String = days[dayOfWeek - 1]
+            val sharedPreferences = getSharedPreferences("DefaultCharacters", MODE_PRIVATE)
+            val default = sharedPreferences.getString(dayName, null)
+            if(default == null){
+                Toast.makeText(this, "Looks like there is no default character for $dayName", Toast.LENGTH_SHORT).show()
+            }else{
+                val intent = Intent(this, CharacterViewActivity::class.java)
+                intent.putExtra("characterName", default)
+                startActivity(intent)
+            }
         }
 
         player.setOnClickListener{

@@ -13,10 +13,10 @@
         android:theme="@style/Theme.SchreckNet"
         tools:targetApi="31">
         <activity
-            android:name=".activities.CharacterCreationActivity2"
+            android:name=".activities.CharacterViewActivity"
             android:exported="false" />
         <activity
-            android:name=".activities.CharacterCreationActivity"
+            android:name=".activities.CharacterCreationActivity2"
             android:exported="false" />
         <activity
             android:name=".activities.CharacterSelectionActivity"

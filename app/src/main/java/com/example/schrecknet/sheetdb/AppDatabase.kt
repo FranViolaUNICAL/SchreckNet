@@ -25,6 +25,7 @@ abstract class AppDatabase: RoomDatabase() {
                 ).build()
                 Log.d("AppDatabase", "Database creato con successo!")
                 INSTANCE = instance
+                Log.d("AppDatabase", "$instance")
                 instance
             }
         }

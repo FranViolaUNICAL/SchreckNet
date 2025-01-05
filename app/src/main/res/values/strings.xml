@@ -75,11 +75,11 @@
     <string name="predator_hint">Insert Predator</string>
     <string name="sire">Sire</string>
     <string name="sire_hint">Insert Sire</string>
-    <string name="clan">Caln</string>
+    <string name="clan">Clan</string>
     <string name="clan_hint">Insert Clan</string>
     <string name="generation">Generation</string>
     <string name="generation_hint">Insert Generation</string>
-    
+
     <string name="physical"> Physical</string>
     <string name="strength"> Strength</string>
     <string name="dexterity"> Dexterity</string>
@@ -92,7 +92,7 @@
     <string name="intelligence">Intelligence</string>
     <string name="wits">Wits</string>
     <string name="resolve">Resolve</string>
-    
+
     <string name="athletics"> Athletics </string>
     <string name="brawl"> Brawl </string>
     <string name="craft"> Craft </string>
@@ -122,7 +122,7 @@
     <string name="politics"> Politics </string>
     <string name="science"> Science </string>
     <string name="technology"> Technology </string>
-    
+
     <string name="chronicle_tenets"> Chronicle Tenets</string>
     <string name="chronicle_tenets_hint"> Insert Chronicle Tenets</string>
     <string name="touchstones_and_convictions"> Touchstones &amp; Convictions</string>
@@ -155,7 +155,7 @@
     <string name="backgrounds">Backgrounds</string>
     <string name="merits">Merits</string>
     <string name="flaws">Flaws</string>
-    
+
     <string name="backgrounds1_hint">Insert Background #1</string>
     <string name="backgrounds2_hint">Insert Background #2</string>
     <string name="backgrounds3_hint">Insert Background #3</string>
@@ -176,6 +176,8 @@
     <string name="flaws4_hint">Insert Flaw #4</string>
     <string name="flaws5_hint">Insert Flaw #5</string>
     <string name="flaws6_hint">Insert Flaw #6</string>
+
+    <string name="modify_sheet_button"> Modify Sheet</string>
 
 
 </resources>
