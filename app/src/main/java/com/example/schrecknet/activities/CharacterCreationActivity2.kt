@@ -2,6 +2,7 @@ package com.example.schrecknet.activities
 
 import android.annotation.SuppressLint
 import android.content.Context
+import android.content.Intent
 import android.content.SharedPreferences
 import android.content.SharedPreferences.Editor
 import android.os.Bundle
@@ -15,6 +16,7 @@ import android.widget.TextView
 import android.widget.Toast
 import kotlinx.coroutines.launch
 import androidx.activity.enableEdgeToEdge
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
@@ -123,7 +125,6 @@ class CharacterCreationActivity2 : AppCompatActivity() {
         })
     }
 
-    @SuppressLint("SuspiciousIndentation")
     private fun saveInputData(viewPager : ViewPager2): Boolean {
         if(viewPager.currentItem == 0){
             val container = findViewById<LinearLayout>(R.id.character_details_container)
@@ -392,18 +393,41 @@ class CharacterCreationActivity2 : AppCompatActivity() {
             0,
             0
             )
-        characterSheetViewModel.insertCharacterSheet(characterSheet)
-        for(discipline in disciplines){
-            disciplineViewModel.insertDiscipline(discipline)
-        }
-        for(advantage in characterAdvantages){
-            characterAdvantagesViewModel.insertAdvantage(advantage)
-        }
         val namesSet = sharedPreferences.getStringSet("CharacterNames", mutableSetOf())!!.toMutableSet()
         Log.d("character_saved","namesSet: $namesSet")
-        namesSet.add(characterDetails.name)
-        editor.putStringSet("CharacterNames",namesSet)
-        editor.commit()
-        Log.d("character_saved","correctly saved character")
+        if(namesSet.contains(characterDetails.name)){
+            val overwriteBuilder = AlertDialog.Builder(this)
+            overwriteBuilder.setTitle("Default Character Already Set")
+            overwriteBuilder.setMessage("${characterDetails.name} already exists. Do you want to replace it?")
+
+            overwriteBuilder.setPositiveButton("Yes") { dialog, _ ->
+                characterSheetViewModel.insertCharacterSheet(characterSheet)
+                for(discipline in disciplines){
+                    disciplineViewModel.insertDiscipline(discipline)
+                }
+                for(advantage in characterAdvantages){
+                    characterAdvantagesViewModel.insertAdvantage(advantage)
+                }
+                Toast.makeText(this, "Character overridden",Toast.LENGTH_SHORT).show()
+            }
+
+            overwriteBuilder.setNegativeButton("No") { dialog, _ ->
+                dialog.dismiss()
+                Toast.makeText(this, "Did not override character",Toast.LENGTH_SHORT).show()
+            }
+            overwriteBuilder.create().show()
+        }else{
+            characterSheetViewModel.insertCharacterSheet(characterSheet)
+            for(discipline in disciplines){
+                disciplineViewModel.insertDiscipline(discipline)
+            }
+            for(advantage in characterAdvantages){
+                characterAdvantagesViewModel.insertAdvantage(advantage)
+            }
+            namesSet.add(characterDetails.name)
+            editor.putStringSet("CharacterNames",namesSet)
+            editor.commit()
+            Log.d("character_saved","correctly saved character")
+        }
     }
 }

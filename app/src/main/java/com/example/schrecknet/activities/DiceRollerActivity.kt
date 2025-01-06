@@ -1,11 +1,15 @@
 package com.example.schrecknet.activities
 
+import android.content.Context
 import android.hardware.Sensor
 import android.hardware.SensorEvent
 import android.hardware.SensorEventListener
 import android.hardware.SensorManager
 import android.icu.text.BreakIterator
 import android.os.Bundle
+import android.os.VibrationEffect
+import android.os.Vibrator
+import android.os.VibratorManager
 import android.util.Log
 import android.view.View
 import android.widget.AdapterView
@@ -27,6 +31,7 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
@@ -180,14 +185,42 @@ class DiceRollerActivity : AppCompatActivity(), SensorEventListener {
 
     @Composable
     private fun AnimatedText(results: String){
-        // Use BreakIterator as it correctly iterates over characters regardless of how they are
-        // stored, for example, some emojis are made up of multiple characters.
-        // You don't want to break up an emoji as it animates, so using BreakIterator will ensure
-        // this is correctly handled!
-        val breakIterator = remember(results) { BreakIterator.getCharacterInstance() }
+        val context = LocalContext.current
 
-        // Define how many milliseconds between each character should pause for. This will create the
-        // illusion of an animation, as we delay the job after each character is iterated on.
+        //This function uses three different ways to handle vibrations, based on the API used.
+        //It does differentiate between critical and non-critical rolls, however only the former are worth highlighting.
+        fun triggerVibration(context: Context, isCritical: Boolean) {
+            if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.S) {
+                // API 31+
+                val vibratorManager = context.getSystemService(Context.VIBRATOR_MANAGER_SERVICE) as VibratorManager
+                val vibrator = vibratorManager.defaultVibrator
+                if (vibrator.hasVibrator()) {
+                    val vibrationEffect = VibrationEffect.createOneShot(
+                        if (isCritical) 200 else 100,
+                        VibrationEffect.DEFAULT_AMPLITUDE
+                    )
+                    vibrator.vibrate(vibrationEffect)
+                }
+            } else if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.O) {
+                // API 26-30
+                val vibrator = context.getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
+                if (vibrator.hasVibrator()) {
+                    val vibrationEffect = VibrationEffect.createOneShot(
+                        if (isCritical) 200 else 100,
+                        VibrationEffect.DEFAULT_AMPLITUDE
+                    )
+                    vibrator.vibrate(vibrationEffect)
+                }
+            } else {
+                // API 24-25
+                val vibrator = context.getSystemService(Context.VIBRATOR_SERVICE) as Vibrator
+                if (vibrator.hasVibrator()) {
+                    vibrator.vibrate(if (isCritical) 200 else 100)
+                }
+            }
+        }
+
+        val breakIterator = remember(results) { BreakIterator.getCharacterInstance() }
         val typingDelayInMs = 50L
 
         var substringText by remember {
@@ -199,16 +232,16 @@ class DiceRollerActivity : AppCompatActivity(), SensorEventListener {
             animationSpec = tween(durationMillis = 300)
         )
         LaunchedEffect(results) {
-            // Initial start delay of the typing animation
             delay(500)
             breakIterator.text = StringCharacterIterator(results)
 
             var nextIndex = breakIterator.next()
-            // Iterate over the string, by index boundary
             while (nextIndex != BreakIterator.DONE) {
                 substringText = results.subSequence(0, nextIndex).toString()
                 Log.d("substring_text_debug", "Substring text is : $substringText. Does it contain MESSY: ${substringText.contains("MESSY")}. Does it contain BESTIAL: ${substringText.contains("BESTIAL")}" )
-                // Go to the next logical character boundary
+                if(substringText.contains("MESSY") || substringText.contains("BESTIAL")){
+                    triggerVibration(context, true)
+                }
                 nextIndex = breakIterator.next()
                 delay(typingDelayInMs)
             }
