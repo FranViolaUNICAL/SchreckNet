@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="blood_potency_quantity">
+        <item> 1 </item>
+        <item> 2 </item>
+        <item> 3 </item>
+        <item> 4 </item>
+        <item> 5 </item>
+        <item> 6 </item>
+        <item> 7 </item>
+        <item> 8 </item>
+        <item> 9 </item>
+        <item> 10 </item>
+    </string-array>
+    <string-array name="dice_quantity">
+        <item> 1 </item>
+        <item> 2 </item>
+        <item> 3 </item>
+        <item> 4 </item>
+        <item> 5 </item>
+        <item> 6 </item>
+        <item> 7 </item>
+        <item> 8 </item>
+        <item> 9 </item>
+        <item> 10 </item>
+        <item> 11 </item>
+        <item> 12 </item>
+        <item> 13 </item>
+        <item> 14 </item>
+        <item> 15 </item>
+        <item> 16 </item>
+    </string-array>
+    <string-array name="hunger_dice_quantity">
+        <item> 0 </item>
+        <item> 1 </item>
+        <item> 2 </item>
+        <item> 3 </item>
+        <item> 4 </item>
+        <item> 5 </item>
+    </string-array>
+    <color name="terminal_green">#B0006000</color>
+    <color name="terminal_white">#ffffff</color>
+    <string name="academics"> Academics </string>
+    <string name="advantages">Advantages</string>
+    <string name="ambition">Ambition</string>
+    <string name="ambition_hint">Insert Ambition</string>
+    <string name="animal_ken"> Animal Ken </string>
+    <string name="app_name">SchreckNet</string>
+    <string name="athletics"> Athletics </string>
+    <string name="awareness"> Awareness </string>
+    <string name="backgrounds">Backgrounds</string>
+    <string name="backgrounds1_hint">Insert Background #1</string>
+    <string name="backgrounds2_hint">Insert Background #2</string>
+    <string name="backgrounds3_hint">Insert Background #3</string>
+    <string name="backgrounds4_hint">Insert Background #4</string>
+    <string name="backgrounds5_hint">Insert Background #5</string>
+    <string name="backgrounds6_hint">Insert Background #6</string>
+    <string name="bane_severity_hint"> Insert Bane Severity </string>
+    <string name="blood"> Blood </string>
+    <string name="blood_potency"> Blood Potency </string>
+    <string name="blood_surge_hint"> Insert Blood Surge </string>
+    <string name="brawl"> Brawl </string>
+    <string name="char_of_the_day"> Character Of The Day </string>
+    <string name="charisma">Charisma</string>
+    <string name="chronicle">Chronicle</string>
+    <string name="chronicle_hint">Insert Chronicle</string>
+    <string name="chronicle_tenets"> Chronicle Tenets</string>
+    <string name="chronicle_tenets_hint"> Insert Chronicle Tenets</string>
+    <string name="clan">Clan</string>
+    <string name="clan_bane"> Clan Bane</string>
+    <string name="clan_bane_hint"> Insert Clan Bane</string>
+    <string name="clan_hint">Insert Clan</string>
+    <string name="composure">Composure</string>
+    <string name="concept">Concept</string>
+    <string name="concept_hint">Insert Concept</string>
+    <string name="craft"> Craft </string>
+    <string name="create_new_character"> New Character </string>
+    <string name="dexterity"> Dexterity</string>
+    <string name="dice_roller_main_menu">Dice Roller</string>
+    <string name="discipline1_hint">Insert Discipline #1</string>
+    <string name="discipline2_hint">Insert Discipline #2</string>
+    <string name="discipline3_hint">Insert Discipline #3</string>
+    <string name="discipline4_hint">Insert Discipline #4</string>
+    <string name="discipline5_hint">Insert Discipline #5</string>
+    <string name="discipline6_hint">Insert Discipline #6</string>
+    <string name="disciplines"> Disciplines </string>
+    <string name="drive"> Drive </string>
+    <string name="etiquette"> Etiquette </string>
+    <string name="feeding_penalty_hint"> Insert Feeding Penalty </string>
+    <string name="finance"> Finance </string>
+    <string name="firearms"> Firearms </string>
+    <string name="flaws">Flaws</string>
+    <string name="flaws1_hint">Insert Flaw #1</string>
+    <string name="flaws2_hint">Insert Flaw #2</string>
+    <string name="flaws3_hint">Insert Flaw #3</string>
+    <string name="flaws4_hint">Insert Flaw #4</string>
+    <string name="flaws5_hint">Insert Flaw #5</string>
+    <string name="flaws6_hint">Insert Flaw #6</string>
+    <string name="generation">Generation</string>
+    <string name="generation_hint">Insert Generation</string>
+    <string name="haven">Haven</string>
+    <string name="humanity"> Humanity </string>
+    <string name="hunger"> Hunger </string>
+    <string name="hunger_dice_select">…and how many of those are hunger dices?</string>
+    <string name="insight"> Insight </string>
+    <string name="intelligence">Intelligence</string>
+    <string name="intimidation"> Intimidation </string>
+    <string name="investigation"> Investigation </string>
+    <string name="larceny"> Larceny </string>
+    <string name="leadership"> Leadership </string>
+    <string name="manipulation">Manipulation</string>
+    <string name="medicine"> Medicine </string>
+    <string name="melee"> Melee </string>
+    <string name="mend_amount_hint"> Insert Mend Amount </string>
+    <string name="mental"> Mental</string>
+    <string name="merits">Merits</string>
+    <string name="merits1_hint">Insert Merit #1</string>
+    <string name="merits2_hint">Insert Merit #2</string>
+    <string name="merits3_hint">Insert Merit #3</string>
+    <string name="merits4_hint">Insert Merit #4</string>
+    <string name="merits5_hint">Insert Merit #5</string>
+    <string name="merits6_hint">Insert Merit #6</string>
+    <string name="modify_sheet_button"> Modify Sheet</string>
+    <string name="name">Name</string>
+    <string name="name_hint">Insert Name</string>
+    <string name="next">Next Step</string>
+    <string name="number_dice_select">How many dices do you want to throw?</string>
+    <string name="occult"> Occult </string>
+    <string name="performance"> Performance </string>
+    <string name="persuasion"> Persuasion </string>
+    <string name="physical"> Physical</string>
+    <string name="player">Player</string>
+    <string name="player_hint">Insert Player</string>
+    <string name="player_mode"> Select Your Character </string>
+    <string name="politics"> Politics </string>
+    <string name="power1_hint">Insert Power #1</string>
+    <string name="power2_hint">Insert Power #2</string>
+    <string name="power3_hint">Insert Power #3</string>
+    <string name="power4_hint">Insert Power #4</string>
+    <string name="power5_hint">Insert Power #5</string>
+    <string name="power_bonus_hint"> Insert Power Bonus </string>
+    <string name="predator">Predator</string>
+    <string name="predator_hint">Insert Predator</string>
+    <string name="previous">Previous Step</string>
+    <string name="resolve">Resolve</string>
+    <string name="rouse_re_roll_hint"> Insert Rouse Re Roll </string>
+    <string name="save_character"> Save Character</string>
+    <string name="science"> Science </string>
+    <string name="sheet_manager_main_menu">Sheet Manager</string>
+    <string name="sheet_manager_title"> Choose your mode: </string>
+    <string name="sire">Sire</string>
+    <string name="sire_hint">Insert Sire</string>
+    <string name="social"> Social</string>
+    <string name="stamina"> Stamina</string>
+    <string name="stealth"> Stealth </string>
+    <string name="streetwise"> Streetwise </string>
+    <string name="strength"> Strength</string>
+    <string name="subterfuge"> Subterfuge </string>
+    <string name="survival"> Survival </string>
+    <string name="technology"> Technology </string>
+    <string name="throw_dices_instruction"> Shake your device to throw your dices.</string>
+    <string name="title_menu">SchreckNet 1.0</string>
+    <string name="touchstones_and_convictions"> Touchstones &amp; Convictions</string>
+    <string name="touchstones_and_convictions_hint"> Insert Touchstones &amp; Convictions</string>
+    <string name="weapons">Weapons</string>
+    <string name="wits">Wits</string>
+    <style name="Theme.SchreckNet" parent="Theme.AppCompat.NoActionBar"/>
+</resources>

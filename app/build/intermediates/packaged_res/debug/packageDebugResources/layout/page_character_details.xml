@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/character_details"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <com.example.schrecknet.MatrixRainView
+        android:id="@+id/matrixRain"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    </com.example.schrecknet.MatrixRainView>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/character_details_container"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <EditText
+                android:id="@+id/input_name"
+                android:hint="@string/name_hint"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/terminal"
+                android:padding="25dp"/>
+
+            <EditText
+                android:id="@+id/input_player"
+                android:hint="@string/player_hint"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/terminal"
+                android:padding="25dp"/>
+
+            <EditText
+                android:id="@+id/input_chronicle"
+                android:hint="@string/chronicle_hint"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/terminal"
+                android:padding="25dp"/>
+
+            <EditText
+                android:id="@+id/input_concept"
+                android:hint="@string/concept_hint"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/terminal"
+                android:padding="25dp"/>
+
+            <EditText
+                android:id="@+id/input_ambition"
+                android:hint="@string/ambition_hint"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/terminal"
+                android:padding="25dp"/>
+
+            <EditText
+                android:id="@+id/input_predator"
+                android:hint="@string/predator_hint"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/terminal"
+                android:padding="25dp"/>
+
+            <EditText
+                android:id="@+id/input_sire"
+                android:hint="@string/sire_hint"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/terminal"
+                android:padding="25dp"/>
+
+            <EditText
+                android:id="@+id/input_clan"
+                android:hint="@string/clan_hint"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/terminal"
+                android:padding="25dp"/>
+
+            <EditText
+                android:id="@+id/input_generation"
+                android:hint="@string/generation"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/terminal"
+                android:padding="25dp"/>
+        </LinearLayout>
+    </ScrollView>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

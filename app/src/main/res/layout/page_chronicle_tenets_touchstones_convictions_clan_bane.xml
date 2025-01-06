@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/character_details"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <com.example.schrecknet.MatrixRainView
+        android:id="@+id/matrixRain"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    </com.example.schrecknet.MatrixRainView>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/chronicle_tenets_touchstones_convictions_clan_bane_container"
+            android:orientation="vertical"
+            android:padding="10dp">
+
+            <EditText
+                android:id="@+id/input_chronicle_tenets"
+                android:hint="@string/chronicle_tenets_hint"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/terminal"
+                android:gravity="center"
+                android:padding="75dp"/>
+
+            <EditText
+                android:id="@+id/input_touchstones_and_convictions"
+                android:hint="@string/touchstones_and_convictions_hint"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/terminal"
+                android:gravity="center"
+                android:padding="75dp"/>
+
+            <EditText
+                android:id="@+id/input_clan_bane"
+                android:hint="@string/clan_bane_hint"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/terminal"
+                android:gravity="center"
+                android:padding="75dp"/>
+        </LinearLayout>
+    </ScrollView>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

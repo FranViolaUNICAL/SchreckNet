@@ -1,0 +1,138 @@
+[
+    {
+        "merged": "C:\\Users\\Francesco\\.gradle\\daemon\\8.9\\com.example.schrecknet.app-debug-66:\\layout_page_chronicle_tenets_touchstones_convictions_clan_bane.xml.flat",
+        "source": "C:\\Users\\Francesco\\.gradle\\daemon\\8.9\\com.example.schrecknet.app-main-68:\\layout\\page_chronicle_tenets_touchstones_convictions_clan_bane.xml"
+    },
+    {
+        "merged": "C:\\Users\\Francesco\\.gradle\\daemon\\8.9\\com.example.schrecknet.app-debug-66:\\layout_activity_character_selection.xml.flat",
+        "source": "C:\\Users\\Francesco\\.gradle\\daemon\\8.9\\com.example.schrecknet.app-main-68:\\layout\\activity_character_selection.xml"
+    },
+    {
+        "merged": "C:\\Users\\Francesco\\.gradle\\daemon\\8.9\\com.example.schrecknet.app-debug-66:\\xml_data_extraction_rules.xml.flat",
+        "source": "C:\\Users\\Francesco\\.gradle\\daemon\\8.9\\com.example.schrecknet.app-main-68:\\xml\\data_extraction_rules.xml"
+    },
+    {
+        "merged": "C:\\Users\\Francesco\\.gradle\\daemon\\8.9\\com.example.schrecknet.app-debug-66:\\layout_activity_character_view.xml.flat",
+        "source": "C:\\Users\\Francesco\\.gradle\\daemon\\8.9\\com.example.schrecknet.app-main-68:\\layout\\activity_character_view.xml"
+    },
+    {
+        "merged": "C:\\Users\\Francesco\\.gradle\\daemon\\8.9\\com.example.schrecknet.app-debug-66:\\mipmap-hdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\Francesco\\.gradle\\daemon\\8.9\\com.example.schrecknet.app-main-68:\\mipmap-hdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\Francesco\\.gradle\\daemon\\8.9\\com.example.schrecknet.app-debug-66:\\mipmap-xxxhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\Francesco\\.gradle\\daemon\\8.9\\com.example.schrecknet.app-main-68:\\mipmap-xxxhdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\Francesco\\.gradle\\daemon\\8.9\\com.example.schrecknet.app-debug-66:\\layout_activity_character_creation2.xml.flat",
+        "source": "C:\\Users\\Francesco\\.gradle\\daemon\\8.9\\com.example.schrecknet.app-main-68:\\layout\\activity_character_creation2.xml"
+    },
+    {
+        "merged": "C:\\Users\\Francesco\\.gradle\\daemon\\8.9\\com.example.schrecknet.app-debug-66:\\mipmap-xxhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\Francesco\\.gradle\\daemon\\8.9\\com.example.schrecknet.app-main-68:\\mipmap-xxhdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\Francesco\\.gradle\\daemon\\8.9\\com.example.schrecknet.app-debug-66:\\drawable_ic_launcher_foreground.xml.flat",
+        "source": "C:\\Users\\Francesco\\.gradle\\daemon\\8.9\\com.example.schrecknet.app-main-68:\\drawable\\ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "C:\\Users\\Francesco\\.gradle\\daemon\\8.9\\com.example.schrecknet.app-debug-66:\\layout_activity_sheet_manager.xml.flat",
+        "source": "C:\\Users\\Francesco\\.gradle\\daemon\\8.9\\com.example.schrecknet.app-main-68:\\layout\\activity_sheet_manager.xml"
+    },
+    {
+        "merged": "C:\\Users\\Francesco\\.gradle\\daemon\\8.9\\com.example.schrecknet.app-debug-66:\\layout_page_blood.xml.flat",
+        "source": "C:\\Users\\Francesco\\.gradle\\daemon\\8.9\\com.example.schrecknet.app-main-68:\\layout\\page_blood.xml"
+    },
+    {
+        "merged": "C:\\Users\\Francesco\\.gradle\\daemon\\8.9\\com.example.schrecknet.app-debug-66:\\font_terminal.ttf.flat",
+        "source": "C:\\Users\\Francesco\\.gradle\\daemon\\8.9\\com.example.schrecknet.app-main-68:\\font\\terminal.ttf"
+    },
+    {
+        "merged": "C:\\Users\\Francesco\\.gradle\\daemon\\8.9\\com.example.schrecknet.app-debug-66:\\layout_page_skills.xml.flat",
+        "source": "C:\\Users\\Francesco\\.gradle\\daemon\\8.9\\com.example.schrecknet.app-main-68:\\layout\\page_skills.xml"
+    },
+    {
+        "merged": "C:\\Users\\Francesco\\.gradle\\daemon\\8.9\\com.example.schrecknet.app-debug-66:\\mipmap-anydpi-v26_ic_launcher.xml.flat",
+        "source": "C:\\Users\\Francesco\\.gradle\\daemon\\8.9\\com.example.schrecknet.app-main-68:\\mipmap-anydpi-v26\\ic_launcher.xml"
+    },
+    {
+        "merged": "C:\\Users\\Francesco\\.gradle\\daemon\\8.9\\com.example.schrecknet.app-debug-66:\\drawable_m_icon.xml.flat",
+        "source": "C:\\Users\\Francesco\\.gradle\\daemon\\8.9\\com.example.schrecknet.app-main-68:\\drawable\\m_icon.xml"
+    },
+    {
+        "merged": "C:\\Users\\Francesco\\.gradle\\daemon\\8.9\\com.example.schrecknet.app-debug-66:\\mipmap-mdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\Francesco\\.gradle\\daemon\\8.9\\com.example.schrecknet.app-main-68:\\mipmap-mdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\Francesco\\.gradle\\daemon\\8.9\\com.example.schrecknet.app-debug-66:\\layout_backgrounds_merits_flaws.xml.flat",
+        "source": "C:\\Users\\Francesco\\.gradle\\daemon\\8.9\\com.example.schrecknet.app-main-68:\\layout\\backgrounds_merits_flaws.xml"
+    },
+    {
+        "merged": "C:\\Users\\Francesco\\.gradle\\daemon\\8.9\\com.example.schrecknet.app-debug-66:\\drawable_cornice_trasparente.xml.flat",
+        "source": "C:\\Users\\Francesco\\.gradle\\daemon\\8.9\\com.example.schrecknet.app-main-68:\\drawable\\cornice_trasparente.xml"
+    },
+    {
+        "merged": "C:\\Users\\Francesco\\.gradle\\daemon\\8.9\\com.example.schrecknet.app-debug-66:\\mipmap-anydpi-v26_ic_launcher_round.xml.flat",
+        "source": "C:\\Users\\Francesco\\.gradle\\daemon\\8.9\\com.example.schrecknet.app-main-68:\\mipmap-anydpi-v26\\ic_launcher_round.xml"
+    },
+    {
+        "merged": "com.example.schrecknet.app-debug-66:/layout_activity_character_view.xml.flat",
+        "source": "com.example.schrecknet.app-main-68:/layout/activity_character_view.xml"
+    },
+    {
+        "merged": "C:\\Users\\Francesco\\.gradle\\daemon\\8.9\\com.example.schrecknet.app-debug-66:\\mipmap-xhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\Francesco\\.gradle\\daemon\\8.9\\com.example.schrecknet.app-main-68:\\mipmap-xhdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\Francesco\\.gradle\\daemon\\8.9\\com.example.schrecknet.app-debug-66:\\drawable_ic_launcher_background.xml.flat",
+        "source": "C:\\Users\\Francesco\\.gradle\\daemon\\8.9\\com.example.schrecknet.app-main-68:\\drawable\\ic_launcher_background.xml"
+    },
+    {
+        "merged": "C:\\Users\\Francesco\\.gradle\\daemon\\8.9\\com.example.schrecknet.app-debug-66:\\mipmap-xxxhdpi_ic_launcher.webp.flat",
+        "source": "C:\\Users\\Francesco\\.gradle\\daemon\\8.9\\com.example.schrecknet.app-main-68:\\mipmap-xxxhdpi\\ic_launcher.webp"
+    },
+    {
+        "merged": "C:\\Users\\Francesco\\.gradle\\daemon\\8.9\\com.example.schrecknet.app-debug-66:\\layout_page_disciplines.xml.flat",
+        "source": "C:\\Users\\Francesco\\.gradle\\daemon\\8.9\\com.example.schrecknet.app-main-68:\\layout\\page_disciplines.xml"
+    },
+    {
+        "merged": "C:\\Users\\Francesco\\.gradle\\daemon\\8.9\\com.example.schrecknet.app-debug-66:\\layout_activity_main.xml.flat",
+        "source": "C:\\Users\\Francesco\\.gradle\\daemon\\8.9\\com.example.schrecknet.app-main-68:\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\Francesco\\.gradle\\daemon\\8.9\\com.example.schrecknet.app-debug-66:\\xml_backup_rules.xml.flat",
+        "source": "C:\\Users\\Francesco\\.gradle\\daemon\\8.9\\com.example.schrecknet.app-main-68:\\xml\\backup_rules.xml"
+    },
+    {
+        "merged": "C:\\Users\\Francesco\\.gradle\\daemon\\8.9\\com.example.schrecknet.app-debug-66:\\layout_page_attributes.xml.flat",
+        "source": "C:\\Users\\Francesco\\.gradle\\daemon\\8.9\\com.example.schrecknet.app-main-68:\\layout\\page_attributes.xml"
+    },
+    {
+        "merged": "C:\\Users\\Francesco\\.gradle\\daemon\\8.9\\com.example.schrecknet.app-debug-66:\\layout_activity_dice_roller.xml.flat",
+        "source": "C:\\Users\\Francesco\\.gradle\\daemon\\8.9\\com.example.schrecknet.app-main-68:\\layout\\activity_dice_roller.xml"
+    },
+    {
+        "merged": "C:\\Users\\Francesco\\.gradle\\daemon\\8.9\\com.example.schrecknet.app-debug-66:\\mipmap-xhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\Francesco\\.gradle\\daemon\\8.9\\com.example.schrecknet.app-main-68:\\mipmap-xhdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\Francesco\\.gradle\\daemon\\8.9\\com.example.schrecknet.app-debug-66:\\drawable_bottone_personalizzato.xml.flat",
+        "source": "C:\\Users\\Francesco\\.gradle\\daemon\\8.9\\com.example.schrecknet.app-main-68:\\drawable\\bottone_personalizzato.xml"
+    },
+    {
+        "merged": "C:\\Users\\Francesco\\.gradle\\daemon\\8.9\\com.example.schrecknet.app-debug-66:\\mipmap-xxhdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\Francesco\\.gradle\\daemon\\8.9\\com.example.schrecknet.app-main-68:\\mipmap-xxhdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\Francesco\\.gradle\\daemon\\8.9\\com.example.schrecknet.app-debug-66:\\mipmap-hdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\Francesco\\.gradle\\daemon\\8.9\\com.example.schrecknet.app-main-68:\\mipmap-hdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\Francesco\\.gradle\\daemon\\8.9\\com.example.schrecknet.app-debug-66:\\mipmap-mdpi_ic_launcher_round.webp.flat",
+        "source": "C:\\Users\\Francesco\\.gradle\\daemon\\8.9\\com.example.schrecknet.app-main-68:\\mipmap-mdpi\\ic_launcher_round.webp"
+    },
+    {
+        "merged": "C:\\Users\\Francesco\\.gradle\\daemon\\8.9\\com.example.schrecknet.app-debug-66:\\layout_page_character_details.xml.flat",
+        "source": "C:\\Users\\Francesco\\.gradle\\daemon\\8.9\\com.example.schrecknet.app-main-68:\\layout\\page_character_details.xml"
+    }
+]
